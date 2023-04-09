@@ -6,16 +6,16 @@ from PIL import Image
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from keras.applications.vgg16 import preprocess_input
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='template')
 
 # Load the VGG16 model
-with open('/models/vgg16_model.pkl', 'rb') as n:
-    vmodel = pickle.load(n)
+with open('models/vgg16_model.pkl', 'rb') as n:
+    vmodel = pickle.load(n)   
 for layers in (vmodel.layers):
     layers.trainable = False
 
 # Load the hybrid model
-with open('/models/hybrid_surya_model.pkl', 'rb') as f:
+with open('models/hybrid_surya_model.pkl', 'rb') as f:
     pmodel = pickle.load(f)
 
 @app.route('/')
@@ -31,7 +31,7 @@ def predict():
     resized_image = image.resize(new_size)
     x = img_to_array(resized_image)
     x = x/255
-    x = preprocess_input(x)
+    # x = preprocess_input(x)
     x = np.expand_dims(x, axis=0)
 
     # Extract features using the VGG16 model
@@ -53,3 +53,5 @@ def predict():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
