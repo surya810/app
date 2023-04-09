@@ -31,3 +31,9 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #3e8e41;
 }
+body{
+    background-image: url('/workspaces/app/img/bf.webp');
+    background-size: cover;
+    background-color: lightgreen
+  }
+  
