@@ -2,6 +2,15 @@
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+   
+    
+}
+
+.container {
+    
+    background-image: url('img/bg.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 h1 {
@@ -16,24 +25,32 @@ h2 {
 
 input[type="file"] {
     margin-top: 32px;
+    padding: 50px 60px;
+    width: 300px;
+    border: 2px solid #3e8e41;
+    border-radius: 12px;
+    padding: 25px;
+      
+
 }
 
 input[type="submit"] {
     margin-top: 16px;
     background-color: #4CAF50;
     color: white;
-    padding: 12px 24px;
+    padding: 25px 26px;
     border: none;
-    border-radius: 4px;
+    border-radius: 12px;
     cursor: pointer;
+    width: 100px;
 }
 
 input[type="submit"]:hover {
     background-color: #3e8e41;
 }
+
 body{
-    background-image: url('/workspaces/app/img/bf.webp');
-    background-size: cover;
+   
     background-color: lightgreen
   }
   
