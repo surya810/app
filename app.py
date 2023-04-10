@@ -6,7 +6,7 @@ from PIL import Image
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from keras.applications.vgg16 import preprocess_input
 
-app = Flask(__name__, template_folder='template')
+app = Flask(__name__, template_folder='templates')
 
 # Load the VGG16 model
 with open('models/vgg16_model.pkl', 'rb') as n:
