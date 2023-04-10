@@ -22,6 +22,10 @@ with open('models/hybrid_surya_model.pkl', 'rb') as f:
 def home():
     return render_template('index.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 @app.route('/predict', methods=['POST'])
 def predict():
     # Load and preprocess the image
