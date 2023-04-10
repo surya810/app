@@ -30,8 +30,15 @@ def about():
 @app.route('/predict', methods=['POST'])
 def predict():
     # Load and preprocess the image
-    image_file = request.files['image']
-    image = Image.open(image_file)
+     # Load and preprocess the image
+    try:
+        image_file = request.files['image']
+        image = Image.open(image_file)
+    except ValueError:
+        return render_template('index.html', prediction='Error: Invalid image file')
+    # image_file = request.files['image']
+    # image = Image.open(image_file)
+
     new_size = (224, 224)
     resized_image = image.resize(new_size)
     x = img_to_array(resized_image)
